@@ -1,0 +1,55 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  background: #112055;
+}
+svg {
+  max-height: 60vh;
+  overflow:visible;
+}
+path.top {
+  --star-color: #ff0;
+}
+path {
+  --star-color: #379157;
+  fill: var( --star-color, green );
+  stroke: var( --star-color, green );
+  fill:#0f0;
+  stroke:#0f0;
+  stroke-width: .2;
+  transform: scale(0);
+  transform-origin: 50% 50%;
+  animation: star 8s ease-in infinite;
+  animation-delay: calc( ( var(--no) - 165)  * -.015s );
+  transform-box: fill-box;
+}
+@keyframes star {
+  0% {
+    transform: scale(0);
+    animation-timing-function: cubic-bezier(.74,1.72,.57,1.01)
+  }
+  10% {
+    transform: scale(1);
+  }
+  65% {
+    transform: translateY(0px) scale(1);
+  }
+  75% {
+    transform: translateY(50px) scale(0);
+  }
+  100% {
+    transform: translateY( 0px ) scale(0);
+  }
+}
+body:after {
+  content: "done with fun by Uwe Chardon";
+  color: #fff;
+  font-family: sans-serif;
+  position: absolute;
+  bottom: 1vh;
+  right: 1vw;
+}
